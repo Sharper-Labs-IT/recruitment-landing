@@ -337,7 +337,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             Connecting UK retail employers with qualified, payroll-ready
-            candidates from Sri Lanka — retail-focused hiring, simplified.
+            candidates from Sri Lanka. Retail-focused hiring, simplified.
           </motion.p>
 
           {/* CTAs */}

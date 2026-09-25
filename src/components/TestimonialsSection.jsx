@@ -45,7 +45,7 @@ const testimonials = [
     
     rating: 5,
     date: '2026-03-18',
-    text: "Reliable sourcing, intuitive dashboards, and great support — Recruitment Landing helped us quickly hire seasonal staff.",
+    text: "Reliable sourcing, intuitive dashboards, and great support. Recruitment Landing helped us quickly hire seasonal staff.",
   },
 ];
 
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
           variants={fadeIn('up', 0.4)}
           className="text-gray-600 max-w-3xl mx-auto"
         >
-          Trusted by hiring teams and job seekers for fast, high-quality recruitment — reduce time-to-hire, improve candidate fit, and scale hiring with confidence.
+          Trusted by hiring teams and job seekers for fast, high-quality recruitment. Reduce time to hire, improve candidate fit, and scale hiring with confidence.
         </motion.p>
       </motion.div>
 

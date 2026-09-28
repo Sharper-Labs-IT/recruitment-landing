@@ -113,7 +113,7 @@ const Hero = () => {
         }}
       >
         <video
-          src="/hero.mp4"
+          src={`${import.meta.env.BASE_URL}hero.mp4`}
           aria-hidden
           muted
           loop

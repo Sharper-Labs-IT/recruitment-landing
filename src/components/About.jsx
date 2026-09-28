@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn, textVariant } from '../utils/motion'
+import retailVacancyLogo from '../assets/retail-vacacy-logo.png'
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
       <motion.div variants={fadeIn('up', 0.3)} initial="hidden" whileInView="show" className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
           <div className="flex items-center gap-4 mb-4">
-            <img src="https://www.retail-vacancies.uk/favicon.ico" alt="Retail Vacancies" className="w-10 h-10 rounded" />
+            <img src={retailVacancyLogo} alt="Retail Vacancies" className="w-10 h-10 rounded object-contain" />
             <h3 className="text-xl font-semibold text-[#800000]">Retail-Vacancies.uk</h3>
           </div>
           <p className="text-gray-600 mb-4">A UK-focused job board listing retail roles across stores, supermarkets and retail chains — ideal for employers and candidates seeking retail opportunities.</p>

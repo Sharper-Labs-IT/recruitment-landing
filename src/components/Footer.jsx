@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import retailVacancyLogo from '../assets/retail-vacacy-logo.png'
 
 const Footer = () => {
   // simplified footer — link lists removed per design
@@ -29,7 +30,7 @@ const Footer = () => {
           <motion.div variants={fadeIn('up', 0.7)} className="flex flex-col md:flex-row items-center gap-4">
             <div className="flex items-center gap-4">
               <motion.a whileHover={{ scale: 1.02 }} href="https://www.retail-vacancies.uk" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#800000] font-medium">
-                <img src="https://www.retail-vacancies.uk/favicon.ico" alt="Retail Vacancies" className="w-5 h-5 rounded" />
+                <img src={retailVacancyLogo} alt="Retail Vacancies" className="w-5 h-5 rounded object-contain" />
                 Retail Vacancies
               </motion.a>
               <motion.a whileHover={{ scale: 1.02 }} href="https://www.job-labs.lk" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#800000] font-medium">

@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FiCheckCircle, FiArrowUpRight } from 'react-icons/fi'
 import { fadeIn, textVariant } from '../utils/motion'
+import retailVacancyLogo from '../assets/retail-vacacy-logo.png'
 
 const sites = [
   {

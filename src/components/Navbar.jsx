@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { motion } from "framer-motion";
 import { fadeIn} from "../utils/motion";
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,7 +30,7 @@ const Navbar = () => {
           href="#home"
           className="flex items-center gap-2 cursor-pointer"
         >
-          <img src="/src/assets/logo.png" alt="Logo" className="h-16 w-auto object-contain" />
+          <img src={logo} alt="Logo" className="h-16 w-auto object-contain" />
         </motion.a>
         {/* Mobile Menu Button */}
         <motion.button 

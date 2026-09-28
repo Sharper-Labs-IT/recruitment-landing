@@ -14,7 +14,7 @@ const features = [
     ),
     title: "Retail-focused sourcing",
     description:
-      "Every candidate is matched to retail job families — from shop assistants and supervisors to store managers and fuel station staff. No generic CVs.",
+      "Every candidate is matched to retail job families, from shop assistants and supervisors to store managers and fuel station staff. No generic CVs.",
   },
   {
     number: "02",
@@ -26,7 +26,7 @@ const features = [
     ),
     title: "Vetted & interview-ready",
     description:
-      "Background-checked, role-fit interviewed, and shortlisted before they reach you. Only genuine candidates — no fake profiles, no expired applications.",
+      "Background-checked, role-fit interviewed, and shortlisted before they reach you. Only genuine candidates. No fake profiles, no expired applications.",
   },
   {
     number: "03",
@@ -38,7 +38,7 @@ const features = [
     ),
     title: "Fast placements",
     description:
-      "48-hour average turnaround. Built for seasonal peaks, urgent gaps, and high-volume hiring — from corner shops to national retail chains.",
+      "48-hour average turnaround. Built for seasonal peaks, urgent gaps, and high-volume hiring, from corner shops to national retail chains.",
   },
   {
     number: "04",
@@ -215,7 +215,7 @@ const FeaturesSection = () => {
               fontFamily: "'Georgia', 'Times New Roman', serif",
             }}
           >
-            Specialist retail recruitment —{" "}
+            Specialist retail recruitment,{" "}
             <span style={{ color: "#800000" }}>done right.</span>
           </motion.h2>
           <motion.p
@@ -228,7 +228,7 @@ const FeaturesSection = () => {
             }}
           >
             From fuel stations to fashion chains, we connect UK employers with
-            verified, job-ready candidates — fast, affordable, and without the
+            verified, job-ready candidates. Fast, affordable, and without the
             agency headaches.
           </motion.p>
         </motion.div>

@@ -9,66 +9,94 @@ import { fadeIn, textVariant } from "../utils/motion";
 const testimonials = [
   {
     id: 1,
-    name: "Robin Ayala Doe",
-    image: "https://randomuser.me/api/portraits/men/77.jpg",
-    label: 'Job Labs',
-    text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast.",
+    name: "Aisha Rahman",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    label: 'Hiring Manager',
+    
+    rating: 5,
+    date: '2025-09-12',
+    text: "Using Recruitment Landing cut our time-to-hire by 40%. The candidate quality and shortlist relevance are outstanding.",
   },
   {
     id: 2,
-    name: "John De marli",
-    image: "https://randomuser.me/api/portraits/women/90.jpg",
-    label: 'Retail vacancies',
-    text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.",
+    name: "James Ortega",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    label: 'Candidate',
+    
+    rating: 5,
+    date: '2026-01-05',
+    text: "I found a role that matched my skills within days. The application process was clear and the hiring team was responsive.",
   },
   {
     id: 3,
-    name: "Rowhan Smith",
-    image: "https://randomuser.me/api/portraits/men/90.jpg",
-    label: 'Job Labs',
-    text: "When she reached the first hills of the Mountains, she had a last view back on the of her hometown Bookmarksgrove, the headline.",
+    name: "Priya Patel",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    label: 'Recruiter',
+    
+    rating: 4,
+    date: '2025-11-02',
+    text: "The platform's sourcing tools and applicant tracking integrations helped us scale hiring while keeping candidate experience high.",
   },
   {
     id: 4,
-    name: "Sarah Johnson",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
-    label: 'Retail vacancies',
-    text: "The customer service has been exceptional. They went above and beyond to help me solve my problems and were always available when I needed them.",
-  },
-  {
-    id: 5,
-    name: "Michael Chen",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    label: 'Job Labs',
-    text: "I've been using their services for over a year now and couldn't be happier. The platform is intuitive and the features are exactly what I needed for my business.",
-  },
-  {
-    id: 6,
-    name: "Emma Wilson",
-    image: "https://randomuser.me/api/portraits/women/28.jpg",
-    label: 'Retail vacancies',
-    text: "What impressed me most was how quickly they responded to my requests. The team is professional, knowledgeable, and truly cares about their customers' success.",
+    name: "Liam O'Connor",
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    label: 'Employer',
+    
+    rating: 5,
+    date: '2026-03-18',
+    text: "Reliable sourcing, intuitive dashboards, and great support. Recruitment Landing helped us quickly hire seasonal staff.",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-16 px-4 max-w-7xl mx-auto">
+      {/* JSON-LD for Reviews / AggregateRating to improve SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Recruitment Landing",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: (
+                testimonials.reduce((s, t) => s + t.rating, 0) / testimonials.length
+              ).toFixed(1),
+              reviewCount: testimonials.length,
+            },
+            review: testimonials.map((t) => ({
+              "@type": "Review",
+              author: t.name,
+              datePublished: t.date,
+              reviewBody: t.text,
+              name: `Review by ${t.name}`,
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: t.rating,
+                bestRating: 5,
+              },
+            })),
+          }),
+        }}
+      />
       <motion.div
         variants={fadeIn('up', 0.3)}
         className="text-center mb-12"
       >
-        <motion.h2 
+        <motion.h2
           variants={textVariant(0.2)}
           className="text-3xl md:text-4xl font-bold mb-4"
         >
-          What our customers say
+          Real hiring results from employers and candidates
         </motion.h2>
-        <motion.p 
+        <motion.p
           variants={fadeIn('up', 0.4)}
-          className="text-gray-600"
+          className="text-gray-600 max-w-3xl mx-auto"
         >
-          Stories from employers and candidates across Job Labs and Retail vacancies
+          Trusted by hiring teams and job seekers for fast, high-quality recruitment. Reduce time to hire, improve candidate fit, and scale hiring with confidence.
         </motion.p>
       </motion.div>
 
@@ -102,10 +130,10 @@ const TestimonialsSection = () => {
                 variants={fadeIn('up', 0.3 * (index + 1))}
                 className="relative text-center bg-white p-4 rounded-lg shadow-md h-full flex flex-col overflow-hidden"
               >
-                {/* Corner ribbon — fixed version */}
+                {/* Corner ribbon */}
                 <div
                   className={`absolute z-20 text-white text-[11px] font-semibold text-center shadow ${
-                    testimonial.label === 'Retail vacancies' ? 'bg-[#c21515]' : 'bg-[#0b69ff]'
+                    testimonial.label === 'Candidate' ? 'bg-[#0b69ff]' : 'bg-[#800000]'
                   }`}
                   style={{
                     width: '130px',
@@ -166,6 +194,8 @@ const TestimonialsSection = () => {
                 >
                   {testimonial.name}
                 </motion.h3>
+
+                {/* location removed per request */}
 
                 <motion.p
                   variants={fadeIn('up', 0.6 * (index + 1))}

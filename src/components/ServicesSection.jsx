@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsStack } from 'react-icons/bs'
 import { HiLightBulb } from 'react-icons/hi'
-import { FiSettings } from 'react-icons/fi'
+import { FiSettings, FiCheck, FiArrowUpRight } from 'react-icons/fi'
 import { BiTime } from 'react-icons/bi'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -9,132 +9,101 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ServicesSection = () => {
   const services = [
     {
-      icon: <BsStack className="w-8 h-8 text-[#800000]" />,
+      icon: <BsStack className="w-7 h-7" />,
       title: "Candidate Sourcing",
-      description: "Targeted sourcing for UK retail roles — front-of-house, stock, supervisors.",
-      link: "#learn-more"
+      description: "Targeted sourcing for UK retail roles, including front of house, stock and supervisors.",
     },
     {
-      icon: <HiLightBulb className="w-8 h-8 text-[#800000]" />,
-      title: "Screening & Shortlisting", 
+      icon: <HiLightBulb className="w-7 h-7" />,
+      title: "Screening & Shortlisting",
       description: "CV screening, telephone interviews and role-fit shortlists.",
-      link: "#learn-more"
     },
     {
-      icon: <FiSettings className="w-8 h-8 text-[#800000]" />,
+      icon: <FiSettings className="w-7 h-7" />,
       title: "Onboarding & Payroll",
       description: "Onboarding support and payroll-ready placements for overseas hires.",
-      link: "#learn-more"
     },
     {
-      icon: <BiTime className="w-8 h-8 text-[#800000]" />,
+      icon: <BiTime className="w-7 h-7" />,
       title: "Training & Upskilling",
       description: "Role-specific training to ensure quick ramp-up and retention.",
-      link: "#learn-more"
     }
   ]
 
-  return (
-    <section id="services" className="py-20 container mx-auto px-4 sm:px-6 lg:px-8">
-     <motion.div 
-      variants={fadeIn('up', 0.3)}
-      className='flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24'
-     >
-       {/* Header */}
-       <motion.div 
-        variants={fadeIn('right', 0.4)}
-        className="md:w-1/3"
-       >
-        <motion.h2 
-          variants={textVariant(0.2)}
-          className="text-3xl md:text-4xl font-bold mb-6 md:w-4/5"
-        >
-          Retail Recruitment Services
-        </motion.h2>
-        <motion.p 
-          variants={fadeIn('up', 0.5)}
-          className="text-gray-600 text-lg mb-4 md:w-4/5"
-        >
-          End-to-end hiring solutions for UK retail — sourcing, screening and onboarding from Sri Lanka.
-        </motion.p>
-        <motion.div 
-          variants={fadeIn('up', 0.6)}
-          className="space-y-3"
-        >
-          <motion.div 
-            variants={fadeIn('right', 0.7)}
-            className="flex items-center gap-2"
-          >
-            <div className="w-5 h-5 rounded-full bg-[#fff4f4] flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
-            </div>
-            <span className="text-gray-600">Screened, role-fit candidates</span>
-          </motion.div>
-          <motion.div 
-            variants={fadeIn('right', 0.8)}
-            className="flex items-center gap-2"
-          >
-            <div className="w-5 h-5 rounded-full bg-[#fff4f4] flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
-            </div>
-            <span className="text-gray-600">Fast turnaround and payroll-ready hires</span>
-          </motion.div>
-        </motion.div>
-        <motion.a 
-          variants={fadeIn('up', 0.9)}
-          whileHover={{ scale: 1.02 }}
-          href="https://www.retail-vacancies.uk"
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 inline-block bg-[#800000] text-white px-10 py-4 min-w-[220px] rounded-full hover:bg-[#660000] transition-transform shadow-lg text-lg font-semibold"
-        >
-          Browse Retail Vacancies
-        </motion.a>
-      </motion.div>
+  const points = ["Screened, role-fit candidates", "Fast turnaround and payroll-ready hires"]
 
-      {/* Services Grid */}
-      <motion.div 
-        variants={fadeIn('left', 0.4)}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+  return (
+    <section id="services" className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[#fff7f7] to-white" />
+      <div className="absolute -right-32 top-20 w-96 h-96 rounded-full bg-[#800000]/10 blur-3xl -z-10" />
+
+      <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20"
       >
-        {services.map((service, index) => (
-          <motion.div 
-            key={index}
-            variants={fadeIn('up', 0.3 * (index + 1))}
-            whileHover={{ scale: 1.04 }}
-            className="bg-white w-full cursor-pointer rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300 border border-gray-100"
+        {/* Header */}
+        <motion.div variants={fadeIn('right', 0.3)} className="lg:w-5/12">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-[#800000]/10 text-[#800000] text-sm font-semibold tracking-wide uppercase">
+            What we do
+          </span>
+          <motion.h2
+            variants={textVariant(0.2)}
+            className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
           >
-            <motion.div 
-              variants={fadeIn('down', 0.4 * (index + 1))}
-              className="mb-4"
+            Retail Recruitment <span className="text-[#800000]">Services</span>
+          </motion.h2>
+          <p className="text-gray-600 text-lg mb-6">
+            End-to-end hiring solutions for UK retail: sourcing, screening and onboarding from Sri Lanka.
+          </p>
+          <ul className="space-y-3">
+            {points.map((p) => (
+              <li key={p} className="flex items-center gap-3">
+                <span className="w-6 h-6 rounded-full bg-[#800000] text-white flex items-center justify-center shrink-0">
+                  <FiCheck className="w-4 h-4" />
+                </span>
+                <span className="text-gray-700 font-medium">{p}</span>
+              </li>
+            ))}
+          </ul>
+          <motion.a
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            href="https://www.retail-vacancies.uk"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex items-center gap-2 bg-[#800000] text-white px-8 py-4 rounded-full hover:bg-[#660000] transition-colors shadow-lg shadow-[#800000]/30 text-lg font-semibold"
+          >
+            Browse Retail Vacancies <FiArrowUpRight />
+          </motion.a>
+        </motion.div>
+
+        {/* Services Grid */}
+        <div className="lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              variants={fadeIn('up', 0.2 + 0.1 * index)}
+              whileHover={{ y: -6 }}
+              className="group relative bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-[#800000]/10 transition-shadow duration-300 overflow-hidden"
             >
-              {service.icon}
+              <div className="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-[#800000] to-[#C8860A] group-hover:w-full transition-all duration-500" />
+              <span className="absolute top-5 right-6 text-5xl font-bold text-gray-100 group-hover:text-[#800000]/10 transition-colors select-none">
+                0{index + 1}
+              </span>
+              <div className="w-14 h-14 mb-5 rounded-xl bg-[#800000]/10 text-[#800000] flex items-center justify-center group-hover:bg-[#800000] group-hover:text-white transition-colors duration-300">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{service.description}</p>
             </motion.div>
-            <motion.h3 
-              variants={textVariant(0.3)}
-              className="text-xl font-semibold mb-2"
-            >
-              {service.title}
-            </motion.h3>
-            <motion.p 
-              variants={fadeIn('up', 0.5 * (index + 1))}
-              className="text-gray-600 mb-4"
-            >
-              {service.description}
-            </motion.p>
-            <motion.a 
-              variants={fadeIn('up', 0.6 * (index + 1))}
-              href={service.link}
-              className="text-[#800000] font-medium hover:text-[#660000] transition-colors"
-            >
-              Learn more
-            </motion.a>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </motion.div>
-     </motion.div>
     </section>
   )
 }
 
-export default ServicesSection 
+export default ServicesSection
